@@ -8,27 +8,27 @@ end
 
 # Setup CarrierWave to use Amazon S3. Add `gem "fog-aws" to your Gemfile.
 #
-if Rails.env.production?
-  require 'carrierwave/storage/fog'
+# if Rails.env.production?
+#   require 'carrierwave/storage/fog'
 
-  CarrierWave.configure do |config|
-    config.storage = :fog
-    config.fog_provider = 'fog/aws'                                             # required
-    config.fog_credentials = {
-      provider:              'AWS',                                             # required
-      aws_access_key_id:     Rails.application.secrets.aws_access_key_id,       # required
-      aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,   # required
-      host:                  "s3.eu-central-1.amazonaws.com",
-      endpoint: "https://s3.eu-central-1.amazonaws.com",
-      region:                "eu-central-1"                                     # optional, defaults to 'us-east-1'
-    }
-    config.fog_public = true
-    config.fog_directory  = "decidim-localret"                                # required
-    config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }    # optional, defaults to {}
-  end
-else
-  CarrierWave.configure do |config|
-    config.storage = :file
-    config.enable_processing = !Rails.env.test?
-  end
-end
+#   CarrierWave.configure do |config|
+#     config.storage = :fog
+#     config.fog_provider = 'fog/aws'                                             # required
+#     config.fog_credentials = {
+#       provider:              'AWS',                                             # required
+#       aws_access_key_id:     Rails.application.secrets.aws_access_key_id,       # required
+#       aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,   # required
+#       host:                  "s3.eu-central-1.amazonaws.com",
+#       endpoint: "https://s3.eu-central-1.amazonaws.com",
+#       region:                "eu-central-1"                                     # optional, defaults to 'us-east-1'
+#     }
+#     config.fog_public = true
+#     config.fog_directory  = "decidim-localret"                                # required
+#     config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }    # optional, defaults to {}
+#   end
+# else
+#   CarrierWave.configure do |config|
+#     config.storage = :file
+#     config.enable_processing = !Rails.env.test?
+#   end
+# end
