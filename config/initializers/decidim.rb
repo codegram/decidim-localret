@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 Decidim.configure do |config|
   config.application_name = "Decidim Localret"
-  config.mailer_sender    = "cromero@localret.cat"
+  config.mailer_sender    = "noreply@codegram.com"
   config.authorization_handlers = []
 
   # Uncomment this lines to set your preferred locales
