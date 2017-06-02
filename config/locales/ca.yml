@@ -1,0 +1,8 @@
+ca:
+  activerecord:
+    errors:
+      models:
+        decidim/participatory_process:
+          attributes:
+            scope:
+              required: "es obligatori"

@@ -8,7 +8,7 @@
     "sendgrid:starter"
   ],
   "scripts": {
-    "postdeploy":"rake db:schema:load db:migrate db:seed"
+    "postdeploy":"rake db:schema:load db:seed"
   },
   "env": {
     "SECRET_KEY_BASE": {
