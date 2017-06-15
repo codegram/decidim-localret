@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby '2.4.1'
 
-gem "decidim"
+gem "decidim", git: "git://github.com/decidim/decidim"
 
 gem 'puma'
 gem 'uglifier'
@@ -14,7 +14,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
