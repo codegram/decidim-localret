@@ -1,6 +1,6 @@
 {
   "name": "decidim_localret",
-  "description": "TODO: Add a short description about decidim_localret",
+  "description": "A deployment tailored to Localret",
   "keywords": [],
   "addons": [
     "heroku-postgresql:hobby-dev",
