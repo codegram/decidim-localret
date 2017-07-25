@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/podemos-info/decidim
-  revision: 8dfe2cc63d376453fc20929f2b9bed3b8ac2baef
+  revision: e4acbabfc5959bee950418a25391bfc9efd475f4
   branch: features/complex-scopes
   specs:
     decidim (0.4.0)
