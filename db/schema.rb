@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721075743) do
+ActiveRecord::Schema.define(version: 20170726131527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,6 +290,7 @@ ActiveRecord::Schema.define(version: 20170721075743) do
     t.jsonb "participatory_structure"
     t.integer "decidim_scope_id"
     t.integer "decidim_participatory_process_group_id"
+    t.boolean "show_statistics", default: true
     t.index ["decidim_organization_id", "slug"], name: "index_unique_process_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_processes_on_decidim_organization_id"
   end
@@ -367,13 +368,27 @@ ActiveRecord::Schema.define(version: 20170721075743) do
     t.index ["decidim_scope_id"], name: "index_decidim_results_results_on_decidim_scope_id"
   end
 
+  create_table "decidim_scope_types", id: :serial, force: :cascade do |t|
+    t.integer "decidim_organization_id"
+    t.jsonb "name", null: false
+    t.jsonb "plural", null: false
+    t.index ["decidim_organization_id"], name: "index_decidim_scope_types_on_decidim_organization_id"
+  end
+
   create_table "decidim_scopes", id: :serial, force: :cascade do |t|
-    t.string "name", null: false
     t.integer "decidim_organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "name", null: false
+    t.integer "scope_type_id"
+    t.integer "parent_id"
+    t.string "code", null: false
+    t.integer "part_of", default: [], null: false, array: true
+    t.index ["decidim_organization_id", "code"], name: "index_decidim_scopes_on_decidim_organization_id_and_code", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_scopes_on_decidim_organization_id"
-    t.index ["name"], name: "index_decidim_scopes_on_name"
+    t.index ["parent_id"], name: "index_decidim_scopes_on_parent_id"
+    t.index ["part_of"], name: "index_decidim_scopes_on_part_of", using: :gin
+    t.index ["scope_type_id"], name: "index_decidim_scopes_on_scope_type_id"
   end
 
   create_table "decidim_static_pages", id: :serial, force: :cascade do |t|
@@ -510,7 +525,10 @@ ActiveRecord::Schema.define(version: 20170721075743) do
   add_foreign_key "decidim_newsletters", "decidim_users", column: "author_id"
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_processes", "decidim_organizations"
+  add_foreign_key "decidim_scope_types", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_organizations"
+  add_foreign_key "decidim_scopes", "decidim_scope_types", column: "scope_type_id"
+  add_foreign_key "decidim_scopes", "decidim_scopes", column: "parent_id"
   add_foreign_key "decidim_static_pages", "decidim_organizations"
   add_foreign_key "decidim_users", "decidim_organizations"
 end
