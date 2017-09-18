@@ -12,6 +12,7 @@ gem "decidim-meetings", "0.6.1"
 gem "decidim-pages", "0.6.1"
 gem "decidim-participatory_processes", "0.6.1"
 gem "decidim-proposals", "0.6.1"
+gem "decidim-results", "0.6.1"
 gem "decidim-surveys", "0.6.1"
 gem "decidim-system", "0.6.1"
 

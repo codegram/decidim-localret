@@ -610,6 +610,7 @@ DEPENDENCIES
   decidim-pages (= 0.6.1)
   decidim-participatory_processes (= 0.6.1)
   decidim-proposals (= 0.6.1)
+  decidim-results (= 0.6.1)
   decidim-surveys (= 0.6.1)
   decidim-system (= 0.6.1)
   faker
