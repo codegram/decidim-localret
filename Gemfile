@@ -1,20 +1,8 @@
 source "https://rubygems.org"
 
-ruby '2.4.1'
+ruby '2.4.2'
 
-gem "decidim-admin", "0.6.3"
-gem "decidim-assemblies", "0.6.3"
-gem "decidim-api", "0.6.3"
-gem "decidim-budgets", "0.6.3"
-gem "decidim-comments", "0.6.3"
-gem "decidim-core", "0.6.3"
-gem "decidim-meetings", "0.6.3"
-gem "decidim-pages", "0.6.3"
-gem "decidim-participatory_processes", "0.6.3"
-gem "decidim-proposals", "0.6.3"
-gem "decidim-results", "0.6.3"
-gem "decidim-surveys", "0.6.3"
-gem "decidim-system", "0.6.3"
+gem "decidim-assemblies", "~> 0.6.4"
 
 gem 'puma'
 gem 'uglifier'
@@ -22,7 +10,7 @@ gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev", "0.6.3"
+  gem "decidim-dev"
 end
 
 group :development do
