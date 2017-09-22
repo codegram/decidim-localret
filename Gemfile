@@ -2,7 +2,8 @@ source "https://rubygems.org"
 
 ruby '2.4.2'
 
-gem "decidim-assemblies", "~> 0.6.4"
+gem "decidim", "~> 0.6.4"
+gem "decidim-assemblies"
 
 gem 'puma'
 gem 'uglifier'

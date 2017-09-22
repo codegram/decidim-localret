@@ -598,7 +598,8 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  decidim-assemblies (~> 0.6.4)
+  decidim (~> 0.6.4)
+  decidim-assemblies
   decidim-dev
   faker
   fog-aws
