@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby '2.4.2'
 
-gem "decidim", "~> 0.7.4"
+gem "decidim", "~> 0.8.2"
 gem "decidim-assemblies"
 
 gem 'puma'
@@ -12,6 +12,7 @@ gem 'faker'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem "decidim-dev"
+  gem "rspec-rails"
 end
 
 group :development do
