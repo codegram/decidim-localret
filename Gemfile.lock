@@ -610,6 +610,7 @@ DEPENDENCIES
   listen
   passenger
   puma
+  rspec-rails
   sendgrid-ruby
   spring
   spring-watcher-listen

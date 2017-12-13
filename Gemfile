@@ -12,6 +12,7 @@ gem 'faker'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem "decidim-dev"
+  gem "rspec-rails"
 end
 
 group :development do
