@@ -2,7 +2,9 @@ source "https://rubygems.org"
 
 ruby '2.5.0'
 
-gem "decidim", "~> 0.10.0"
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "metadecidim" }
+
+gem "decidim", DECIDIM_VERSION
 
 gem 'puma'
 gem 'uglifier'
@@ -10,7 +12,7 @@ gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem "decidim-dev"
+  gem "decidim-dev", DECIDIM_VERSION
   gem "rspec-rails"
 end
 
