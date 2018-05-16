@@ -5,6 +5,8 @@ ruby '2.5.0'
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "metadecidim" }
 
 gem "decidim", DECIDIM_VERSION
+gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-consultations", DECIDIM_VERSION
 
 gem 'puma'
 gem 'uglifier'
