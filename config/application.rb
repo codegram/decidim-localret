@@ -14,6 +14,6 @@ module DecidimLocalret
 
     config.i18n.available_locales = %i{ca es it}
     config.i18n.default_locale = :ca
-    config.time_zone ||= ENV["TZ"]
+    config.time_zone = ENV["TZ"]
   end
 end
