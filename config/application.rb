@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -12,8 +14,8 @@ module DecidimLocalret
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.i18n.available_locales = %i{ca es it}
+    config.i18n.available_locales = %i[ca es it]
     config.i18n.default_locale = :ca
-    config.time_zone = ENV["TZ"]
+    config.time_zone = ENV['TZ'] || 'Europe/Madrid'
   end
 end
