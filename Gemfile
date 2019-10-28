@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-ruby '2.6.3'
+ruby '2.6.5'
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.18-stable" }
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "0.19-stable" }
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
@@ -13,6 +13,7 @@ gem "decidim-consultations", DECIDIM_VERSION
 gem 'puma'
 gem 'uglifier'
 gem 'faker'
+gem 'sprockets', '~> 3.7.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
